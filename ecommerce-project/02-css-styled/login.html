@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - ShopZone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-page">
+        <div class="form-container">
+            <h1>🛒 Sign In</h1>
+
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="email" class="required">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        placeholder="your@email.com"
+                        aria-describedby="email-hint"
+                    >
+                    <small id="email-hint">We'll never share your email.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="required">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        minlength="8"
+                        autocomplete="current-password"
+                        placeholder="At least 8 characters"
+                    >
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Keep me signed in</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign In</button>
+
+                <div class="form-links">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </form>
+
+            <hr class="form-divider">
+
+            <div class="form-links">
+                <p>New to ShopZone?</p>
+                <a href="signup.html" class="btn btn-secondary" style="margin-top: 8px;">Create your ShopZone account</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Script -->
+    <script>
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+</body>
+</html>

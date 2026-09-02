@@ -2,7 +2,7 @@
 
 ## 🎯 Building the Backend
 
-**Week 9** · Intermediate · 6 Tasks
+**Week 9** · Intermediate · 7 Tasks
 
 ---
 
@@ -18,6 +18,7 @@ Your React frontend fetches products from a fake API. Real ecommerce platforms h
 
 | # | Task | What You Learn |
 |---|------|---------------|
+| 0 | [Understanding Ports](./tasks/task-00-understanding-ports.md) | Frontend, backend, database ports |
 | 1 | [Node Fundamentals](./tasks/task-01-node-fundamentals.md) | Runtime, modules, fs, path, http |
 | 2 | [Express Setup](./tasks/task-02-express-setup.md) | Express app, routing, request/response |
 | 3 | [REST API Design](./tasks/task-03-rest-api-design.md) | Endpoints, HTTP methods, status codes, CRUD |

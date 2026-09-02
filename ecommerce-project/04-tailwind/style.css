@@ -1,0 +1,16 @@
+/* Tailwind CSS — Task 05-01 + 05-04: Custom Configuration */
+@import "tailwindcss";
+
+/* Custom Theme (Task 05-04) */
+@theme {
+    --color-brand: #131921;
+    --color-brand-light: #232f3e;
+    --color-accent: #febd69;
+    --color-cta: #ffd814;
+    --color-cta-hover: #f0c814;
+    --color-price: #b12704;
+    --color-deal: #cc0c39;
+    --color-success-custom: #059669;
+
+    --font-sans: 'Inter', sans-serif;
+}

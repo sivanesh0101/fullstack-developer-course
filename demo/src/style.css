@@ -1,0 +1,41 @@
+header {
+    background-color: #49a4ff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px 10px 50px;
+    font-size: 20px;
+}
+
+header .account-cart {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header .account-cart a  {
+    color: white;
+    margin: 0;
+    text-decoration: none;
+  
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    color: #ff0000;
+}
+
+.navbar ul{
+    background-color: #121666;
+    padding: 10px 50px 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.navbar ul li a{
+    background-color: #121666;
+    color: white;
+    text-decoration: none;
+}

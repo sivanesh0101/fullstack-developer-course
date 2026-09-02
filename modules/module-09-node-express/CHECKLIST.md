@@ -1,5 +1,6 @@
 # ✅ Module 09 — Self-Assessment Checklist
 
+- [ ] I understand how ports are used across frontend, backend, and databases
 - [ ] I understand Node.js as a server-side runtime
 - [ ] I can set up an Express server with routing
 - [ ] I can design RESTful API endpoints

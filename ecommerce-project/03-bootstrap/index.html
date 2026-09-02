@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopZone - Your one-stop online shopping destination built with Bootstrap.">
+    <title>ShopZone - Bootstrap Version</title>
+    <!-- Bootstrap 5.3.3 CSS (Task 04-01) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Minimal custom overrides */
+        .hero-section {
+            background: linear-gradient(135deg, #131921 0%, #232f3e 100%);
+        }
+        .product-img {
+            height: 200px;
+            object-fit: contain;
+            padding: 16px;
+            background: #f9fafb;
+        }
+        .category-img {
+            height: 150px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR (Task 04-04: Responsive Navbar) ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold fs-4" href="#">🛒 ShopZone</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <!-- Dropdown (Task 04-04) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                            aria-expanded="false">Categories</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">📱 Electronics</a></li>
+                            <li><a class="dropdown-item" href="#">👕 Fashion</a></li>
+                            <li><a class="dropdown-item" href="#">🏠 Home & Kitchen</a></li>
+                            <li><a class="dropdown-item" href="#">📚 Books</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deals">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Customer Service</a>
+                    </li>
+                </ul>
+                <!-- Search Form -->
+                <form class="d-flex me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search ShopZone"
+                        aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+                <div class="d-flex gap-3">
+                    <a href="#loginModal" class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#loginModal">Sign In</a>
+                    <a href="#" class="nav-link text-white">
+                        Cart <span class="badge rounded-pill bg-danger">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO CAROUSEL (Task 04-05) ===== -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-section text-white text-center py-5">
+                    <div class="container py-5">
+                        <h1 class="display-4 fw-bold">Summer Sale — Up to 50% Off</h1>
+                        <p class="lead mt-3">Shop electronics, fashion, and more at incredible prices.</p>
+                        <a href="#products" class="btn btn-warning btn-lg mt-3 fw-semibold">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="bg-primary text-white text-center py-5">
+                    <div class="container py-5">
+                        <h2 class="display-4 fw-bold">New Arrivals</h2>
+                        <p class="lead mt-3">Check out the latest products just for you.</p>
+                        <a href="#products" class="btn btn-light btn-lg mt-3 fw-semibold">Explore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="bg-success text-white text-center py-5">
+                    <div class="container py-5">
+                        <h2 class="display-4 fw-bold">Free Shipping</h2>
+                        <p class="lead mt-3">On orders over $50. Limited time offer!</p>
+                        <a href="#products" class="btn btn-dark btn-lg mt-3 fw-semibold">Start Shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <main class="container">
+
+        <!-- ===== ALERT (Task 04-03: Alerts) ===== -->
+        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+            🎉 <strong>Welcome to ShopZone!</strong> Sign up today and get 10% off your first order.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <!-- ===== CATEGORIES (Task 04-02: Grid System) ===== -->
+        <section class="py-4">
+            <h2 class="text-center mb-4 fw-bold">Shop by Category</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <img src="https://placehold.co/300x150/131921/febd69?text=📱+Electronics"
+                            class="card-img-top category-img" alt="Electronics">
+                        <div class="card-body">
+                            <h5 class="card-title">Electronics</h5>
+                            <a href="#" class="btn btn-outline-dark btn-sm">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <img src="https://placehold.co/300x150/131921/febd69?text=👕+Fashion"
+                            class="card-img-top category-img" alt="Fashion">
+                        <div class="card-body">
+                            <h5 class="card-title">Fashion</h5>
+                            <a href="#" class="btn btn-outline-dark btn-sm">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <img src="https://placehold.co/300x150/131921/febd69?text=🏠+Home"
+                            class="card-img-top category-img" alt="Home & Kitchen">
+                        <div class="card-body">
+                            <h5 class="card-title">Home & Kitchen</h5>
+                            <a href="#" class="btn btn-outline-dark btn-sm">See more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <img src="https://placehold.co/300x150/131921/febd69?text=📚+Books"
+                            class="card-img-top category-img" alt="Books">
+                        <div class="card-body">
+                            <h5 class="card-title">Books</h5>
+                            <a href="#" class="btn btn-outline-dark btn-sm">See more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED PRODUCTS (Task 04-02 + 04-03: Cards, Badges, Buttons) ===== -->
+        <section class="py-4" id="products">
+            <h2 class="text-center mb-4 fw-bold">Featured Products</h2>
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative">
+                            <img src="https://placehold.co/300x300/f9fafb/131921?text=🎧+Headphones"
+                                class="card-img-top product-img" alt="Wireless Headphones">
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">-30%</span>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2">New</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Wireless Headphones</h5>
+                            <p class="card-text text-muted small">High-quality wireless headphones with noise cancellation.</p>
+                            <div class="mt-auto">
+                                <p class="mb-2">
+                                    <del class="text-muted small">$69.99</del>
+                                    <span class="text-danger fw-bold fs-5">$49.99</span>
+                                </p>
+                                <!-- Quick View Modal Trigger (Task 04-04) -->
+                                <button class="btn btn-outline-primary btn-sm mb-2 w-100"
+                                    data-bs-toggle="modal" data-bs-target="#productModal">Quick View</button>
+                                <button class="btn btn-warning w-100 fw-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://placehold.co/300x300/f9fafb/131921?text=👟+Shoes"
+                            class="card-img-top product-img" alt="Running Shoes">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Running Shoes</h5>
+                            <p class="card-text text-muted small">Lightweight and comfortable running shoes for daily use.</p>
+                            <div class="mt-auto">
+                                <p class="text-danger fw-bold fs-5 mb-2">$79.99</p>
+                                <button class="btn btn-warning w-100 fw-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative">
+                            <img src="https://placehold.co/300x300/f9fafb/131921?text=🎒+Backpack"
+                                class="card-img-top product-img" alt="Backpack">
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2">New</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Backpack</h5>
+                            <p class="card-text text-muted small">Durable backpack with laptop compartment and USB charging port.</p>
+                            <div class="mt-auto">
+                                <p class="text-danger fw-bold fs-5 mb-2">$34.99</p>
+                                <button class="btn btn-warning w-100 fw-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="position-relative">
+                            <img src="https://placehold.co/300x300/f9fafb/131921?text=⌚+Watch"
+                                class="card-img-top product-img" alt="Smart Watch">
+                            <span class="badge bg-danger position-absolute top-0 start-0 m-2">-15%</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Smart Watch</h5>
+                            <p class="card-text text-muted small">Fitness tracking smartwatch with heart rate monitor.</p>
+                            <div class="mt-auto">
+                                <p class="mb-2">
+                                    <del class="text-muted small">$149.99</del>
+                                    <span class="text-danger fw-bold fs-5">$129.99</span>
+                                </p>
+                                <button class="btn btn-warning w-100 fw-semibold">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== DEALS SECTION ===== -->
+        <section class="py-4 text-center" id="deals">
+            <h2 class="fw-bold mb-3">Today's Deals</h2>
+            <div class="alert alert-warning" role="alert">
+                🔥 <strong>Flash Sale!</strong> Check back daily for amazing deals and discounts.
+                <span class="badge bg-warning text-dark">Hot Deal</span>
+            </div>
+        </section>
+
+        <!-- ===== BOOTSTRAP FORMS (Task 04-03) ===== -->
+        <section class="py-4">
+            <h2 class="text-center fw-bold mb-4">Newsletter</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="newsletter-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="newsletter-email"
+                                placeholder="your@email.com" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== PRODUCT QUICK-VIEW MODAL (Task 04-04) ===== -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Wireless Headphones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="https://placehold.co/400x400/f9fafb/131921?text=🎧+Headphones"
+                                class="img-fluid rounded" alt="Wireless Headphones">
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-danger fs-4 fw-bold">$49.99 <del class="text-muted fs-6">$69.99</del></p>
+                            <span class="badge bg-success mb-3">In Stock</span>
+                            <p class="mt-2">High-quality wireless headphones with active noise cancellation, 30-hour battery life, and premium comfort.</p>
+                            <h6 class="mt-3">Key Features:</h6>
+                            <ul class="small">
+                                <li>Active Noise Cancellation</li>
+                                <li>30-hour battery life</li>
+                                <li>Bluetooth 5.3</li>
+                                <li>Foldable design</li>
+                            </ul>
+                            <div class="mb-3">
+                                <label class="form-label">Quantity</label>
+                                <select class="form-select w-auto">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning fw-semibold">Add to Cart</button>
+                    <button class="btn btn-dark fw-semibold">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== LOGIN MODAL ===== -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Sign In to ShopZone</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="modal-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="modal-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modal-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="modal-password" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="modal-remember">
+                            <label class="form-check-label" for="modal-remember">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign In</button>
+                        <p class="text-center mt-3 small">
+                            <a href="#">Forgot password?</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER (Task 04-02: Grid) ===== -->
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 mb-4">
+                    <h6 class="text-white fw-bold">Get to Know Us</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">About ShopZone</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Careers</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Press Releases</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <h6 class="text-white fw-bold">Connect with Us</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">Facebook</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Twitter</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <h6 class="text-white fw-bold">Make Money with Us</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">Sell on ShopZone</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Become an Affiliate</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Advertise</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                    <h6 class="text-white fw-bold">Let Us Help You</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#" class="text-light text-decoration-none">Your Account</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Returns Centre</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <p class="text-center small text-muted mb-0">&copy; 2025 ShopZone. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.3 JS Bundle (Task 04-01) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

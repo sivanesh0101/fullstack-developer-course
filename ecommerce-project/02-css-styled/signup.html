@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - ShopZone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-page">
+        <div class="form-container">
+            <h1>🛒 Create Account</h1>
+
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label for="fullname" class="required">Your name</label>
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        required
+                        autocomplete="name"
+                        placeholder="First and last name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email" class="required">Email</label>
+                    <input
+                        type="email"
+                        id="signup-email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        placeholder="your@email.com"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile number (optional)</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                        pattern="[0-9]{10}"
+                        placeholder="10-digit number"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password" class="required">Password</label>
+                    <input
+                        type="password"
+                        id="signup-password"
+                        name="password"
+                        required
+                        minlength="8"
+                        autocomplete="new-password"
+                        placeholder="At least 8 characters"
+                    >
+                    <small>Passwords must be at least 8 characters.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password" class="required">Re-enter password</label>
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm_password"
+                        required
+                        minlength="8"
+                        autocomplete="new-password"
+                        placeholder="Confirm your password"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create your ShopZone account</button>
+
+                <div class="form-links">
+                    <p>Already have an account? <a href="login.html">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Theme Script -->
+    <script>
+        const saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+    </script>
+</body>
+</html>

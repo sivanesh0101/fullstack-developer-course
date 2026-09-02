@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShopZone - Your one-stop online shopping destination for electronics, fashion, books, and more.">
+    <meta name="keywords" content="online shopping, ecommerce, electronics, fashion">
+    <meta name="author" content="ShopZone">
+    <title>ShopZone - Online Shopping for Electronics, Fashion, Home & More</title>
+</head>
+<body id="top">
+
+    <!-- Skip Navigation (Accessibility - Task 08) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Header: Logo, Search, Account, Cart (Task 02 + 03 + 04 + 08) -->
+    <header>
+        <div>
+            <a href="index.html">ShopZone</a>
+        </div>
+        <div>
+            <!-- Search Form (Task 04) -->
+            <form action="/search" method="GET" role="search">
+                <label for="search-category" class="visually-hidden">Category</label>
+                <select id="search-category" name="category">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="books">Books</option>
+                    <option value="home">Home & Kitchen</option>
+                    <option value="sports">Sports</option>
+                </select>
+
+                <label for="search-input" class="visually-hidden">Search</label>
+                <input
+                    type="search"
+                    id="search-input"
+                    name="q"
+                    placeholder="Search ShopZone"
+                    autocomplete="off"
+                    aria-label="Search products"
+                >
+
+                <button type="submit" aria-label="Search products">Search</button>
+            </form>
+        </div>
+        <div>
+            <a href="login.html">Hello, Sign in</a>
+            <a href="#" aria-label="Your orders">Orders</a>
+            <!-- Cart with aria-live for dynamic updates (Task 08) -->
+            <a href="#" aria-label="Shopping cart, 0 items">Cart (<span aria-live="polite" aria-atomic="true">0</span>)</a>
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
+        </div>
+    </header>
+
+    <!-- Navigation Bar (Task 02 + 06) -->
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="#deals">Today's Deals</a></li>
+            <li><a href="#categories">Electronics</a></li>
+            <li><a href="#categories">Fashion</a></li>
+            <li><a href="#categories">Home & Kitchen</a></li>
+            <li><a href="#categories">Books</a></li>
+            <li><a href="#categories">Sports</a></li>
+            <li><a href="#">Customer Service</a></li>
+        </ul>
+    </nav>
+
+    <!-- Breadcrumb (Task 06) -->
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Shop All</li>
+        </ol>
+    </nav>
+
+    <!-- Main Content Area (Task 02 + 03 + 05) -->
+    <main id="main-content">
+
+        <!-- Hero Banner (Task 02 + 05) -->
+        <section id="hero">
+            <figure>
+                <img
+                    src="https://placehold.co/1200x400/232f3e/febd69?text=Summer+Sale+-+50%25+Off"
+                    alt="Summer sale - Up to 50% off on electronics and fashion"
+                    width="1200"
+                    height="400"
+                >
+            </figure>
+            <h1>Welcome to ShopZone</h1>
+            <p>Discover amazing deals on electronics, fashion, home essentials, and more.</p>
+            <a href="#featured-products">Shop Now</a>
+        </section>
+
+        <!-- Product Categories (Task 02 + 03 + 05) -->
+        <section id="categories">
+            <h2>Shop by Category</h2>
+            <div>
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x200/131921/febd69?text=Electronics"
+                            alt="Collection of electronic gadgets including phones and laptops"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                        >
+                        <figcaption>Electronics</figcaption>
+                    </figure>
+                    <a href="#">See more</a>
+                </article>
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x200/131921/febd69?text=Fashion"
+                            alt="Stylish clothing and accessories for men and women"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                        >
+                        <figcaption>Fashion</figcaption>
+                    </figure>
+                    <a href="#">See more</a>
+                </article>
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x200/131921/febd69?text=Home+%26+Kitchen"
+                            alt="Home and kitchen essentials including cookware and decor"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                        >
+                        <figcaption>Home & Kitchen</figcaption>
+                    </figure>
+                    <a href="#">See more</a>
+                </article>
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x200/131921/febd69?text=Books"
+                            alt="Collection of bestselling fiction and non-fiction books"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                        >
+                        <figcaption>Books</figcaption>
+                    </figure>
+                    <a href="#">See more</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Products (Task 02 + 03 + 05 + 08) -->
+        <section id="featured-products">
+            <h2>Featured Products</h2>
+            <div>
+                <!-- Product 1 -->
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x300/eaeded/131921?text=Headphones"
+                            alt="Black wireless over-ear headphones with cushioned ear cups and adjustable headband"
+                            width="300"
+                            height="300"
+                            loading="lazy"
+                        >
+                    </figure>
+                    <header>
+                        <h3>Wireless Headphones</h3>
+                    </header>
+                    <p>High-quality wireless headphones with noise cancellation.</p>
+                    <p><strong>$49.99</strong></p>
+                    <footer>
+                        <button type="button">Add to Cart</button>
+                    </footer>
+                </article>
+
+                <!-- Product 2 -->
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x300/eaeded/131921?text=Running+Shoes"
+                            alt="Lightweight blue running shoes with mesh upper and cushioned sole"
+                            width="300"
+                            height="300"
+                            loading="lazy"
+                        >
+                    </figure>
+                    <header>
+                        <h3>Running Shoes</h3>
+                    </header>
+                    <p>Lightweight and comfortable running shoes for daily use.</p>
+                    <p><strong>$79.99</strong></p>
+                    <footer>
+                        <button type="button">Add to Cart</button>
+                    </footer>
+                </article>
+
+                <!-- Product 3 -->
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x300/eaeded/131921?text=Backpack"
+                            alt="Durable dark gray backpack with laptop compartment and USB charging port"
+                            width="300"
+                            height="300"
+                            loading="lazy"
+                        >
+                    </figure>
+                    <header>
+                        <h3>Backpack</h3>
+                    </header>
+                    <p>Durable backpack with laptop compartment and USB charging port.</p>
+                    <p><strong>$34.99</strong></p>
+                    <footer>
+                        <button type="button">Add to Cart</button>
+                    </footer>
+                </article>
+
+                <!-- Product 4 -->
+                <article>
+                    <figure>
+                        <img
+                            src="https://placehold.co/300x300/eaeded/131921?text=Smart+Watch"
+                            alt="Black fitness tracking smartwatch with heart rate monitor and digital display"
+                            width="300"
+                            height="300"
+                            loading="lazy"
+                        >
+                    </figure>
+                    <header>
+                        <h3>Smart Watch</h3>
+                    </header>
+                    <p>Fitness tracking smartwatch with heart rate monitor.</p>
+                    <p><strong>$129.99</strong></p>
+                    <footer>
+                        <button type="button">Add to Cart</button>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <!-- Deals Section (Task 06 - anchor link target) -->
+        <section id="deals">
+            <h2>Today's Deals</h2>
+            <p>Check back daily for amazing deals and discounts on your favorite products!</p>
+        </section>
+
+    </main>
+
+    <!-- Footer (Task 02 + 03 + 06) -->
+    <footer>
+        <div>
+            <div>
+                <h4>Get to Know Us</h4>
+                <ul>
+                    <li><a href="#">About ShopZone</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect with Us</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Make Money with Us</h4>
+                <ul>
+                    <li><a href="#">Sell on ShopZone</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Let Us Help You</h4>
+                <ul>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Returns Centre</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Info (Task 03 - semantic address) -->
+        <address>
+            <p>ShopZone Inc.</p>
+            <p>Email: <a href="mailto:support@shopzone.com">support@shopzone.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        </address>
+
+        <p>&copy; 2025 ShopZone. All rights reserved.</p>
+
+        <!-- Back to Top (Task 06) -->
+        <a href="#top">Back to Top ↑</a>
+    </footer>
+
+    <!-- Form Error Alert (Accessibility - Task 08) -->
+    <div role="alert" aria-live="assertive" id="form-errors" hidden>
+        <!-- Dynamic error messages will appear here -->
+    </div>
+
+</body>
+</html>
