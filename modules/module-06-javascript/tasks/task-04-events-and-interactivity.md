@@ -5,6 +5,39 @@ Handle user interactions — clicks, form submissions, keyboard input — using 
 
 ---
 
+## ⚡ Common DOM Events & When They Are Used
+
+Browsers provide **many dozens of standard DOM events**, grouped by purpose. Below are the most commonly used event types along with real-world scenarios of when to use them:
+
+| Category | Event | When It's Used |
+| :--- | :--- | :--- |
+| **Mouse** | `click` | User clicks an element (button clicks, navigating links, opening modals). |
+| | `dblclick` | User double-clicks an element (editing inline text, zooming in/out). |
+| | `mousedown` / `mouseup` | Mouse button pressed down or released (drawing canvases, custom drag-and-drop). |
+| | `mousemove` | Cursor moves over an element (tooltips, tracking cursor position). |
+| | `mouseenter` / `mouseleave` | Cursor enters or leaves an element without bubbling (hover states, dropdown menus). |
+| **Keyboard** | `keydown` | Key is pressed down (keyboard shortcuts like `Escape` to close modals, game controls). |
+| | `keyup` | Key is released (triggering action after user finishes pressing a key). |
+| **Form** | `submit` | Form is submitted (intercepting submit to prevent page reload with `e.preventDefault()`). |
+| | `input` | Value changes instantly in `<input>` or `<textarea>` (real-time search, live preview, char counter). |
+| | `change` | Value changes and field loses focus, or dropdown select choice changes. |
+| | `focus` / `blur` | Field gains or loses focus (highlighting active input, validating email on blur). |
+| | `reset` | Form is reset (clearing custom error messages or restoring defaults). |
+| **Clipboard** | `copy` / `cut` / `paste` | Copying, cutting, or pasting text (auto-formatting OTP/credit card inputs on paste). |
+| **Drag & Drop** | `dragstart` / `dragover` / `drop` | Dragging elements on screen (Kanban boards like Trello, file upload dropzones). |
+| **Touch** | `touchstart` / `touchmove` / `touchend` | Mobile screen finger touches & swipes (mobile swipe carousels, touch gestures). |
+| **Pointer** | `pointerdown` / `pointermove` | Unified events for Mouse + Touch + Stylus (cross-device interactive widgets & drawing apps). |
+| **Window** | `DOMContentLoaded` / `load` | HTML parsed or entire page with images fully loaded (initializing JS scripts safely). |
+| | `resize` | Window dimensions change (recalculating responsive layouts or canvas size). |
+| | `scroll` | Page or element is scrolled (infinite scrolling, sticky navbar, scroll animations). |
+| | `beforeunload` | User leaves or refreshes page (showing "Unsaved changes will be lost" prompt). |
+| **Media** | `play` / `pause` / `ended` | Audio or video playback state changes (custom media player controls, auto-playing next track). |
+| | `volumechange` | Volume or mute state changes (syncing custom volume slider UI). |
+
+There are **well over 100 standardized event types** when you include specialized events.
+
+---
+
 ## Instructions
 
 ### Click Events
